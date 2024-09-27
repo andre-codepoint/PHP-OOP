@@ -1,7 +1,9 @@
 <?php
 
-include_once("ClassLoader.php");
 
-ClassLoader::getInstance();
+include_once("Loader/ClassLoader.php");
 
-Application::getInstance()->init();
+
+
+\Loader\ClassLoader::getInstance();
+\Loader\Route::getInstance()->init();

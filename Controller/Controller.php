@@ -4,7 +4,7 @@ namespace Controller;
 
 class Controller {
 
-    private $data;
+    private array $data;
 
     public function __construct()
     {
@@ -15,11 +15,13 @@ class Controller {
 
     }
 
-    protected function data($variable, $data) {
+    protected function data($variable, $data): void
+    {
         $this->data[$variable] = $data;
     }
 
-    protected function display($title) {
+    protected function display($title): void
+    {
         foreach($this->data as $variable => $data) {
             $$variable = $data;
         }
