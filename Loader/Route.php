@@ -22,18 +22,19 @@ class Route {
     }
     public  function init(): void
     {
-        echo " Route::init ";
-        $uri=$_SERVER['REQUEST_URI'];
-        $segment =$uri;
-        if(strpos("?",$uri))
+            echo " Route::init 1";
+            $uri=$_SERVER['REQUEST_URI'];
+            $segment =$uri;
+            if(strpos("?",$uri))
             {
                 $segment=explode("?",$uri)[0];
             }
             $segment=trim($segment, "/");
 
             if(!isset($this->route[$_SERVER["REQUEST_METHOD"]])){
-                echo " 404 ";
+                echo " Route::init 2";
             }
+            echo
             $routes=$this->route[$_SERVER["REQUEST_METHOD"]];
             for ($i=0, $count=count($routes); $i < $count; $i++) {
                 if(preg_match("#^".$routes[$i]["uri"]."$#",$segment)){
