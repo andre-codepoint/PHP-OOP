@@ -6,5 +6,5 @@ include_once("Loader/Route.php");
 
 
 
-\Loader\ClassLoader::getInstance();
+\Loader\ClassLoader::getInstance()->init();
 \Loader\Route::getInstance()->init();

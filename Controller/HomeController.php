@@ -11,7 +11,7 @@ class HomeController extends Controller {
 
     public function index(): void
     {
-
+echo 4;
        //$this->loadModel("Product");
 
       // $products = $this->product->getAll();

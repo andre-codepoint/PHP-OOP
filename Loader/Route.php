@@ -14,7 +14,7 @@ class Route {
         echo 2;
         if((self::$instance===null))
             echo 3;
-            self::$instance = new ClassLoader();
+            self::$instance = new Route();
         return self::$instance;
     }
     public  function init(): void
