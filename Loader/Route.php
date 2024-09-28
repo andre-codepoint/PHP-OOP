@@ -1,6 +1,8 @@
 <?php
 namespace Loader;
+
 use \Config\Config;
+
 class Route {
     private array $route;
     private static $instance;
@@ -8,17 +10,19 @@ class Route {
 
     $this->route = Config::getRoutes();
     }
-    public static function getInstance()
+    public static function getInstance(): Route
 
     {
         echo 2;
-        if((self::$instance===null))
+        if((self::$instance===null)) {
             echo 3;
             self::$instance = new Route();
+        }
         return self::$instance;
     }
     public  function init(): void
     {
+        echo " Route::init ";
         $uri=$_SERVER['REQUEST_URI'];
         $segment =$uri;
         if(strpos("?",$uri) ){

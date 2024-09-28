@@ -5,8 +5,9 @@ class Config {
     private function __construct(){
 
     }
-    public static function getRoutes (): array
+    public static function getRoutes ()
     {
+        echo " Config::getRoutes ";
         return [
             "GET"=>[
                 [
@@ -15,7 +16,7 @@ class Config {
                     "action"=>"index",
                     "params" =>"",
                 ],
-            ]
+            ],
         ];
     }
 
