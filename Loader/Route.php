@@ -9,8 +9,11 @@ class Route {
     $this->route = Config::getRoutes();
     }
     public static function getInstance()
+
     {
+        echo 2;
         if((self::$instance===null))
+            echo 3;
             self::$instance = new ClassLoader();
         return self::$instance;
     }

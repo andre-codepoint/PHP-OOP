@@ -12,6 +12,7 @@ class ClassLoader
 
     public static function getInstance(): ClassLoader
     {
+echo 1;
             if (self::$instance === null) {
             self::$instance = new ClassLoader();
         }
