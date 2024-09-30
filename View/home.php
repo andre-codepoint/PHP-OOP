@@ -1,3 +1,3 @@
 It's HTML code
-<br>
-<?php echo  "hello"; ?>
+
+<?php echo  "It's HTML code"; ?>

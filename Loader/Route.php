@@ -23,20 +23,23 @@ class Route {
     public  function init(): void
     {
             echo " Route::init 1";
-            $uri=$_SERVER['REQUEST_URI'];
+            $uri=$_SERVER["REQUEST_URI"];
+
             $segment =$uri;
             if(strpos("?",$uri))
             {
                 $segment=explode("?",$uri)[0];
             }
             $segment=trim($segment, "/");
-
-            if(!isset($this->route[$_SERVER["REQUEST_METHOD"]])){
-                echo " 404 Not Found ";
+            $reqmethod=$_SERVER["REQUEST_METHOD"];
+            $reqmethod="GET";
+            if(!isset($this->route[$reqmethod])){
+            #if(!isset($this->route[$_SERVER["GET"]])){
+                echo " 404 Not Found \n";
             }
-            echo $this->route["GET"];
+            #echo $this->route["GET"];
             #$routes=$this->route[$_SERVER["REQUEST_METHOD"]];
-            $routes=$this->route["GET"];
+            $routes=$this->route[$reqmethod];
             for ($i=0, $count=count($routes); $i < $count; $i++) {
                 if(preg_match("#^".$routes[$i]["uri"]."$#",$segment)){
                     $params=$routes[$i]['params'];

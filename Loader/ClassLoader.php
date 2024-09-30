@@ -26,8 +26,9 @@ echo 1;
     }
     public function load($name): void
     {
-        echo '$_SERVER["DOCUMENT_ROOT"]='.$_SERVER["DOCUMENT_ROOT"] . "/" . str_replace("\\", "/", $name) . ".php";
-        $docPath=$_SERVER["DOCUMENT_ROOT"] .  str_replace("\\", "/", $name) . ".php";
-        include_once($docPath);
+        #echo '$_SERVER["DOCUMENT_ROOT"]='.$_SERVER["DOCUMENT_ROOT"] . "/" . str_replace("\\", "/", $name) . ".php";
+        $docPath=$_SERVER["DOCUMENT_ROOT"] ."/" . str_replace("\\", "/", $name) . ".php";
+        $docPath = parse_url($docPath, PHP_URL_PATH);
+        include_once('.'.$docPath);
     }
 }
