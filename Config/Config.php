@@ -8,16 +8,8 @@ class Config {
     public static function getRoutes ()
     {
         echo " Config::getRoutes ";
-        return [
-            "GET"=>[
-                [
-                    "uri"=>"",
-                    "controller"=>"\\Controller\\HomeController",
-                    "action"=>"index",
-                    "params" =>"",
-                ],
-            ],
-        ];
+        return array(
+            "GET"=>[["uri"=>"","controller"=>"\\Controller\\HomeController","action"=>"index","params" =>""]]);
     }
 
 }

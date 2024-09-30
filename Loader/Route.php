@@ -32,10 +32,11 @@ class Route {
             $segment=trim($segment, "/");
 
             if(!isset($this->route[$_SERVER["REQUEST_METHOD"]])){
-                echo " Route::init 2";
+                echo " 404 Not Found ";
             }
-            echo
-            $routes=$this->route[$_SERVER["REQUEST_METHOD"]];
+            echo $this->route["GET"];
+            #$routes=$this->route[$_SERVER["REQUEST_METHOD"]];
+            $routes=$this->route["GET"];
             for ($i=0, $count=count($routes); $i < $count; $i++) {
                 if(preg_match("#^".$routes[$i]["uri"]."$#",$segment)){
                     $params=$routes[$i]['params'];
