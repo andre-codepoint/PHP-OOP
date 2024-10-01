@@ -23,15 +23,16 @@ class Route {
     public  function init(): void
     {
             echo " Route::init 1";
-            $uri=$_SERVER["REQUEST_URI"];
-
+            #$uri=$_SERVER["REQUEST_URI"];
+            #$uri="https://localhost/PHP-OOP/index?controller=/Controller/HomeController&action=index";
+            $uri="/?controller=/Controller/HomeController&action=index";
             $segment =$uri;
-            if(strpos("?",$uri))
+            if(strpos($uri,"?"))
             {
                 $segment=explode("?",$uri)[0];
             }
             $segment=trim($segment, "/");
-            $reqmethod=$_SERVER["REQUEST_METHOD"];
+            #$reqmethod=$_SERVER["REQUEST_METHOD"];
             $reqmethod="GET";
             if(!isset($this->route[$reqmethod])){
             #if(!isset($this->route[$_SERVER["GET"]])){
