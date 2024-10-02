@@ -10,7 +10,7 @@ class ClassLoader
     {
     }
 
-    public static function getInstance(): ClassLoader
+    public static function getInstance()
     {
 echo 1;
             if (self::$instance === null) {
@@ -28,6 +28,7 @@ echo 1;
     {
         #echo '$_SERVER["DOCUMENT_ROOT"]='.$_SERVER["DOCUMENT_ROOT"] . "/" . str_replace("\\", "/", $name) . ".php";
         $docPath=$_SERVER["DOCUMENT_ROOT"] ."/" . str_replace("\\", "/", $name) . ".php";
+        echo $_SERVER["DOCUMENT_ROOT"];
         $docPath = '.'.parse_url($docPath, PHP_URL_PATH);
         include_once($docPath);
     }
